@@ -20,12 +20,12 @@ export const registerUser = (userData, history) => dispatch => {
 };
 
 // Login - get user token
-const userUrl = 'http://localhost:3001/api/user_token'    
+// const userUrl = 'http://localhost:3001/api/user_token'    
 
 export const loginUser = userData =>  dispatch => {
   const requestLogin = {"auth": userData};
   axios
-      .post(`${userUrl}.json`, requestLogin)
+      .post('api/user_token', requestLogin)
       .then(res => {
       // const { token } = res.data.jwt;
       localStorage.setItem("jwtToken", res.data.jwt);

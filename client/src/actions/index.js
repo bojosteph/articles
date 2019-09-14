@@ -75,7 +75,7 @@ export const getArticle = (id) => {
 
 export const deleteArticle = (id) => {
   return (dispatch) => {
-    return axios({ method:'delete', url:`${apiUrl}/${id}`, headers: {'Authorization': "Bearer " + localStorage.getItem("jwtToken")}})
+    return axios({ method:'delete', url:`/api/articles/${id}`, headers: {'Authorization': "Bearer " + localStorage.getItem("jwtToken")}})
     .then(response => {
       dispatch({ type: REMOVE_ARTICLE, payload: {id}})
     })
@@ -93,7 +93,7 @@ export const deleteArticle = (id) => {
 export const updateArticle = (article) => {
   const articleId = article.id;
   return (dispatch) => {
-    return axios({ method:'patch', url:`${apiUrl}/${article.id}`, headers: {'Authorization': "Bearer " + localStorage.getItem("jwtToken") }, data: {title: article.title, content: article.content, description: article.description, image_url: article.image_url}})
+    return axios({ method:'patch', url:`/api/articles/${article.id}`, headers: {'Authorization': "Bearer " + localStorage.getItem("jwtToken") }, data: {title: article.title, content: article.content, description: article.description, image_url: article.image_url}})
       .then(response => {
         const data = response.data;
         dispatch({ type: UPDATE_ARTICLE, payload: {id: data.id, title: data.title, content: data.content, description: data.description, image_url: data.image_url}})

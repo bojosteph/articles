@@ -61,7 +61,7 @@ export const getComment = (id) => {
 export const deleteComment = (article, id) => {
   let articleId = article.id;
   return (dispatch) => {
-    return axios({ method:'delete', url:`${apiUrl}/${id}.json`, headers: {'Authorization': token}})
+    return axios({ method:'delete', url:`/api/comments/${id}`, headers: {'Authorization': token}})
     .then(response => {
       dispatch({ type: REMOVE_COMMENT, payload: {id}})
     })
