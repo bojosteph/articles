@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-const ArticleShow = ({article, deleteArticle}) => {
+const ArticleShow = ({article, deleteArticle, auth}) => {
   return (
     <div className="col s6">
     <div className="card-panel hoverable">
@@ -12,11 +12,12 @@ const ArticleShow = ({article, deleteArticle}) => {
       <div className="card-content">
         <span className="card-title activator grey-text text-darken-4">{article.id} : {article.title}<i className="material-icons right">more_vert</i></span>
         <p>{article.description}</p>
+        {auth.user_id && (article.user_id === auth.user_id &&
         <div className="btn-group">
           <Link to={{ pathname: `/articles/${article.id}/edit`, state: { article: article }}} className="btn btn-info">Edit</Link> 
           <button onClick={() => deleteArticle(article.id)} className="btn btn-danger" type="button">Delete</button> 
           <Link to="/articles" className="btn btn-secondary">Close</Link>
-        </div>
+        </div>)}
       </div>
       <div className="card-reveal">
         <span className="card-title grey-text text-darken-4">{article.title}<i className="material-icons right">close</i></span>

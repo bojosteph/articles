@@ -45,7 +45,7 @@ export const addArticle = ({ title, content, description, image_url, user_id }) 
       let data = response.data;
       dispatch({
         type: ADD_ARTICLE,
-        payload: {id: data.id, title: data.title, content: data.content, description: data.description, image_url: data.image_url}
+        payload: {id: data.id, title: data.title, content: data.content, description: data.description, image_url: data.image_url, user_id: user_id}
       })
     })
     .then(() => {
