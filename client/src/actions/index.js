@@ -12,7 +12,7 @@ import {
 } from './types';
 
 
-const apiUrl = 'http://localhost:3001/api/articles';
+// const apiUrl = 'http://localhost:3001/api/articles';
 
 
 
@@ -40,7 +40,7 @@ export const getArticles = () => {
 export const addArticle = ({ title, content, description, image_url, user_id }) => {
   return (dispatch) => {
     // debugger
-    return axios({ method: 'post', url:`${apiUrl}`, headers: {'Authorization': "Bearer " + localStorage.getItem("jwtToken") }, data: {title, content, description, image_url, user_id}})
+    return axios({ method: 'post', url:'/api/articles', headers: {'Authorization': "Bearer " + localStorage.getItem("jwtToken") }, data: {title, content, description, image_url, user_id}})
     .then(response => {
       let data = response.data;
       dispatch({
