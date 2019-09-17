@@ -14,7 +14,7 @@ return (
               <b>Hey there,</b> {user.email.split(" ")[0]}
               <p className="flow-text grey-text text-darken-1">
                 You are logged into a full-stack{" "}
-                <span style={{ fontFamily: "monospace" }}> RAILS REACT</span> app 👏
+                <span style={{ fontFamily: "monospace" }}> RAILS REACT</span> app &#128077; &#128521;
               </p>
             </h4>
            

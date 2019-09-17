@@ -2,6 +2,9 @@
 
 This is A full stack application using Rails backend with React and Redux frontend for creating articles .
 
+You Can Checkout my app deployed in heroku with this link https://limitless-tundra-31238.herokuapp.com/
+it might take a while for  heroku to wakeup my app since this is a free dyno
+
 :
 
 * Ruby version 

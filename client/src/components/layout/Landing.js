@@ -87,7 +87,7 @@ export class Landing extends Component {
         
         </div>
       </Parallax>
-      <h5 class="grey-text text-darken-3 lighten-3">Push yourself, because no one else is going to do it for you.</h5>
+      <h5 className="grey-text text-darken-3 lighten-3">Push yourself, because no one else is going to do it for you.</h5>
       <Parallax
         bgImage={image4}
         strength={200}
@@ -113,10 +113,10 @@ export class Landing extends Component {
         </div>
       </Parallax>
       <div style={{ height: 500 }} />
-      <div class="footer-copyright">
-            <div class="container">
+      <div className="footer-copyright">
+            <div className="container">
             © 2019 Articles App
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            <a className="grey-text text-lighten-4 right" href="#!">More Links</a>
             </div>
           </div>
     </div>

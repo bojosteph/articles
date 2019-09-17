@@ -25,7 +25,7 @@ class CommentList extends Component {
         <h4>Comments</h4>
         {this.props.comments.map((comment) => {
           return(
-            <CommentsIndex  article={article} deleteComment={deleteComment} comment={comment} auth={auth} />
+            <CommentsIndex key={comment.id} article={article} deleteComment={deleteComment} comment={comment} auth={auth} />
           )     
         })}
         
