@@ -4,6 +4,7 @@ import errorReducer from './errorReducer';
 import articlesReducer from './articlesReducer';
 import articleReducer from './articleReducer';
 import commentsReducer from './commentsReducer';
+import commentReducer from './commentReducer';
 
 
 export default combineReducers({
@@ -12,4 +13,5 @@ export default combineReducers({
   articles: articlesReducer,
   article: articleReducer,
   comments: commentsReducer,
+  comment: commentReducer
 })

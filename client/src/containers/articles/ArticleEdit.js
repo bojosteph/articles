@@ -28,27 +28,27 @@ class ArticleEdit extends Component {
     return (
       <div>
        <h1>Edit {this.props.article.title}</h1>
-    <div class="row">
-      <form  class="col s12" onSubmit={this.handleSubmit}>
-        <div class="input-field col s12">
+    <div className="row">
+      <form  className="col s12" onSubmit={this.handleSubmit}>
+        <div className="input-field col s12">
           
           <input type="text" name="title"  defaultValue={this.props.article.title} onChange={this.handleChange}
-           class="materialize-textarea"  required />
+           className="materialize-textarea"  required />
         </div>
-        <div class="input-field col s12">
+        <div className="input-field col s12">
           
-          <textarea  name="content"  class="materialize-textarea" defaultValue={this.props.article.content} onChange={this.handleChange} 
+          <textarea  name="content"  className="materialize-textarea" defaultValue={this.props.article.content} onChange={this.handleChange} 
              required />
         </div>
-        <div class="input-field col s12">
+        <div className="input-field col s12">
           
           <input type="text" name="description" defaultValue={this.props.article.description} onChange={this.handleChange}
-           class="materialize-textarea"   required />
+           className="materialize-textarea"   required />
         </div>
-        <div class="input-field col s12">
+        <div className="input-field col s12">
           
           <input type="text" name="image_url" defaultValue={this.props.article.image_url} onChange={this.handleChange}
-          class="materialize-textarea"  required />
+          className="materialize-textarea"  required />
         </div>
         <div className="btn-group">
             <button type="submit" className="btn btn-dark">Update</button>

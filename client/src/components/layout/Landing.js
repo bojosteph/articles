@@ -30,13 +30,13 @@ export class Landing extends Component {
       <div style={styles}>
 
       <Parallax bgImage={image1} strength={500}>
-        <div style={{ height: 500 }}>
+        <div style={{ height: 600 }}>
           
         </div>
       </Parallax>
       <h5>Welcome to Articles</h5>
       <Parallax bgImage={image3} blur={{ min: -1, max: 3 }}>
-        <div style={{ height: 500 }}>
+        <div style={{ height: 600 }}>
     
         </div>
       </Parallax>
@@ -83,7 +83,7 @@ export class Landing extends Component {
         </div>           
       </div>
       <Parallax bgImage={image2} strength={-100}>
-        <div style={{ height: 500 }}>
+        <div style={{ height: 600 }}>
         
         </div>
       </Parallax>
@@ -108,14 +108,14 @@ export class Landing extends Component {
           </div>
         )}
       >
-        <div style={{ height: 500 }}>
+        <div style={{ height: 600 }}>
           <div style={insideStyles}>do something great</div>
         </div>
       </Parallax>
-      <div style={{ height: 500 }} />
+      <div style={{ height: 600 }} />
       <div className="footer-copyright">
-            <div className="container">
-            © 2019 Articles App
+            <div className="container" style={{fontSize: 30 }}>
+            © 2019 Articles App 
             <a className="grey-text text-lighten-4 right" href="#!">More Links</a>
             </div>
           </div>

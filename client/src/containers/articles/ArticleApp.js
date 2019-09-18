@@ -8,6 +8,7 @@ import ArticleList from './ArticleList';
 import ArticleInfo from './ArticleInfo';
 import ArticleAdd from './ArticleAdd';
 import ArticleEdit from './ArticleEdit';
+import CommentEdit from '../comments/CommentEdit';
 import Welcome from "../../components/welcome/Welcome";
 import {Router, Route, Switch} from 'react-router-dom'
 import Navbar from '../../components/layout/Navbar';
@@ -35,7 +36,8 @@ const Main = () => (
     <Route exact path="/articles" component={ArticleList} />
     <Route exact path="/addArticles" component={ArticleAdd} />
     <Route exact path="/articles/:id" component={ArticleInfo} />
-    <Route exact path="/articles/:id/edit" component={ArticleEdit} />      
+    <Route exact path="/articles/:id/edit" component={ArticleEdit} />
+    <Route exact path="/comments/:id/edit" component={CommentEdit} /> 
   </Switch>
 );
 

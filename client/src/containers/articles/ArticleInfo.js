@@ -24,7 +24,7 @@ class ArticleInfo extends Component {
   
 
   render() {
-    const { article, auth, deleteArticle } = this.props;
+    const { article, auth, deleteArticle, comment } = this.props;
     return (
     <Fragment>
       <ArticleShow article={article} deleteArticle={deleteArticle} auth={auth}/>  
@@ -34,7 +34,7 @@ Likes:
         <div className="col s6">
 
               <CommentAdd />
-              <CommentList />
+              <CommentList article={article}  comment={comment}/>
         </div>         
     </Fragment>
       
@@ -44,7 +44,8 @@ Likes:
 
 const mapStateToProps = state => ({
   article: state.article,
-  auth: state.auth
+  auth: state.auth,
+  comment: state.comment
 });
 const mapDispatchToProps = { getArticle, deleteArticle}
 

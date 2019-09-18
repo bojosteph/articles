@@ -19,17 +19,13 @@ it might take a while for  heroku to wakeup my app since this is a free dyno
   run npm install
   cd ..
   run rake start to start app  
+  to stop the server enter ctrl + c
 
 * Database creation
    run rake:db create and rake db:migrate
    run rake db:seed
 
-* Database initialization
-
-
-
-
-
+* Database initialization   
 * Deployment instructions
 
 * ...

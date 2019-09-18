@@ -12,7 +12,7 @@ import {
 } from './types';
 
 
-const apiUrl = 'http://localhost:3001/api/comments';
+// const apiUrl = 'http://localhost:3001/api/comments';
 const token = "Bearer " + localStorage.getItem("jwtToken")
 
 
@@ -74,18 +74,20 @@ export const deleteComment = (article, id) => {
   }
 }
 
-export const updateComment = (article) => {
-  const articleId = article.id;
+export const updateComment = (comment, article) => {
+  debugger
+  const commentId = comment.id;
+  debugger
   return (dispatch) => {
-    return axios({ method:'patch', url:`${apiUrl}/${article.id}.json`, headers: {'Authorization': token }, data: {title: article.title, content: article.content}})
+    return axios({ method:'patch', url:`/api/comments/${commentId}`, headers: {'Authorization': token }, data: {body: comment.body}})
       .then(response => {
         const data = response.data;
-        dispatch({ type: UPDATE_COMMENT, payload: {id: data.id, title: data.title, content: data.content}})
-        dispatch({ type: REPLACE_COMMENT, payload: {id: data.id, title: data.title, content: data.content}})
-      })
+        dispatch({ type: UPDATE_COMMENT, payload: {id: data.id, body: data.body}})
+        dispatch({ type: REPLACE_COMMENT, payload: {id: data.id, body: data.body}})
+      })    
       .then(() => {
-        history.push(`/articles/${articleId}`)
-      })
+        history.push(`/articles/${article.id}`)
+      })   
       .catch(error => { throw(error)});
   }
 }

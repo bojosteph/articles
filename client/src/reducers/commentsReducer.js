@@ -21,7 +21,7 @@ export default function commentsReducer(state = initialState, action) {
         if (comment.id === action.payload.id) {
           return {
             ...comment,
-            body: action.payload.content
+            body: action.payload.body
           }
         } else {
           return comment
