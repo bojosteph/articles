@@ -60,7 +60,7 @@ class CommentAdd extends Component {
   render() {
    
     return (
-      <div>
+      <div class="col s6">
         <h4>Add Comment </h4>
         <form onSubmit={this.handleSubmit}> 
         <TextArea 

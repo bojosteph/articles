@@ -13,6 +13,7 @@ import Welcome from "../../components/welcome/Welcome";
 import {Router, Route, Switch} from 'react-router-dom'
 import Navbar from '../../components/layout/Navbar';
 import history from '../../history';
+import { SET_CURRENT } from '../../actions/types';
 
 
 
@@ -24,7 +25,9 @@ class ArticleApp extends Component {
         <div className="row">
           <Navbar />   
           <Main />
+         
         </div>
+       
       </Router>
     );
   }

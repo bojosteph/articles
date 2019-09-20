@@ -7,7 +7,8 @@ import {
   REMOVE_COMMENT,
   UPDATE_COMMENT,
   REPLACE_COMMENT, 
-  CLEAR_CURRENT
+  CLEAR_CURRENT, 
+  SET_CURRENT
 
 } from './types';
 
@@ -48,7 +49,7 @@ export const addComment = ({  body, article_id, user_id, email }) => {
 
 export const getComment = (id) => {
   return (dispatch) => {
-    return axios({method: 'get', url: `/api/articles/${id}`, headers: {'Authorization': token }})
+    return axios({method: 'get', url: `/api/comments/${id}`, headers: {'Authorization': token }})
       .then(response => {
         dispatch({ type: RECEIVE_COMMENT, payload: response.data })
       })
@@ -75,11 +76,9 @@ export const deleteComment = (article, id) => {
 }
 
 export const updateComment = (comment, article) => {
-  debugger
-  const commentId = comment.id;
-  debugger
+  
   return (dispatch) => {
-    return axios({ method:'patch', url:`/api/comments/${commentId}`, headers: {'Authorization': token }, data: {body: comment.body}})
+    return axios({ method:'patch', url:`/api/comments/${comment.id}`, headers: {'Authorization': token }, data: {body: comment.body}})
       .then(response => {
         const data = response.data;
         dispatch({ type: UPDATE_COMMENT, payload: {id: data.id, body: data.body}})
@@ -96,5 +95,12 @@ export const updateComment = (comment, article) => {
 export const clearCurrent = () => {
   return {
       type: CLEAR_CURRENT
+  }
+}
+
+export const setCurrent = comment => {
+  return {
+      type: SET_CURRENT,
+      payload: comment
   }
 }

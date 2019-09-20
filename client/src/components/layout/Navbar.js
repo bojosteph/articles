@@ -17,8 +17,7 @@ class Navbar extends Component {
       <li className="nav-item"><NavLink exact className="nav-link" activeClassName="active" to="/addArticles">Add Articles</NavLink></li>
     
       <li><button className="waves-effect waves-light btn"  onClick={this.onLogoutClick}>Logout</button></li>         
-    </ul>
-    
+    </ul>      
   </nav>
   )
   }

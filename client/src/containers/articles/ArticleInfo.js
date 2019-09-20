@@ -10,6 +10,13 @@ class ArticleInfo extends Component {
     count: 0
   }
 
+
+  // handleFollow = () => {
+  //   this.setState({
+  //     follow: !this.state.follow
+  //   })
+  // }
+
   increaseCount = () => {
     let newCount = this.state.count + 1
     this.setState({
@@ -24,18 +31,18 @@ class ArticleInfo extends Component {
   
 
   render() {
+    // const label = this.state.follow ? "Follow" : "Following";
     const { article, auth, deleteArticle, comment } = this.props;
     return (
     <Fragment>
-      <ArticleShow article={article} deleteArticle={deleteArticle} auth={auth}/>  
-      <button onClick={this.increaseCount}> &hearts;
-Likes: 
- {this.state.count}</button>
-        <div className="col s6">
-
-              <CommentAdd />
-              <CommentList article={article}  comment={comment}/>
-        </div>         
+      <div class="container">
+        <ArticleShow article={article} deleteArticle={deleteArticle} auth={auth}/>  
+          {/* <button  onClick={this.handleFollow}>{label}</button> {" "} */}
+          <button onClick={this.increaseCount}> &hearts;
+            Likes:{this.state.count}</button>                 
+        <CommentAdd />
+        <CommentList article={article}  comment={comment}/>
+      </div>         
     </Fragment>
       
     )

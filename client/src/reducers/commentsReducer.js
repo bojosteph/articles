@@ -2,7 +2,8 @@ import {
   RECEIVE_COMMENTS,
   ADD_COMMENT,
   REMOVE_COMMENT,
-  REPLACE_COMMENT, 
+  REPLACE_COMMENT,
+  SET_CURRENT
   
 } from '../actions/types'
 
@@ -16,17 +17,22 @@ export default function commentsReducer(state = initialState, action) {
       return [action.payload, ...state]
     case REMOVE_COMMENT:
       return state.filter(comment => comment.id !== action.payload.id);
-    case REPLACE_COMMENT:
-      return state.map((comment) => {
-        if (comment.id === action.payload.id) {
-          return {
-            ...comment,
-            body: action.payload.body
+      case REPLACE_COMMENT:
+        return state.map((comment) => {
+          if (comment.id === action.payload.id) {
+            return {
+              ...comment,
+              body: action.payload.body                   
+            }
+          } else {
+            return comment
           }
-        } else {
-          return comment
-        }
-      })
+        })
+    case SET_CURRENT:
+        return {
+            ...state, 
+            current: action.payload
+        };
     default:
       return state;
   }

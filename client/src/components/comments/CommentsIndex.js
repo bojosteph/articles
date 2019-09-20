@@ -1,6 +1,5 @@
 import React from 'react'
-// import { Link } from 'react-router-dom';
-// import authReducer from '../../reducers/authReducer';
+import { Link } from 'react-router-dom';
 
 const CommentsIndex = ({article, comment, deleteComment, auth}) => {
   return (
@@ -20,8 +19,8 @@ const CommentsIndex = ({article, comment, deleteComment, auth}) => {
               </div>     
               {auth.user_id && (comment.user_id === auth.user_id &&
              <div className="btn-group">
+                {/* <Link to={{ pathname: `/comments/${comment.id}/edit`, state: { comment: comment }}}><i className="material-icons">edit</i></Link> */}
                 <span className="deleteTaskBtn"  style={deleteBtn} onClick={(e) => deleteComment(article, comment.id)}> <i className="material-icons">delete</i></span>
-                {/* <Link to={{ pathname: `/comments/${comment.id}/edit`, state: { comment: comment, article: article}}}><i className="material-icons">edit</i></Link> */}
             </div>)}
           </div>
       </div>

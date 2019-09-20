@@ -16,3 +16,4 @@ export const UPDATE_COMMENT = 'UPDATE_COMMENT';
 export const REPLACE_COMMENT = 'REPLACE_COMMENT';
 export const CLEAR_CURRENT = 'CLEAR_CURRENT';
 export const SEARCH_DATA = 'SEARCH_DATA'
+export const SET_CURRENT = 'SET_CURRENT';

@@ -3,15 +3,19 @@ import { Link } from 'react-router-dom';
 
 const ArticleShow = ({article, deleteArticle, auth}) => {
   return (
-    <div className="col s6">
-    <div className="card-panel hoverable">
-      <div className="card">
-      <div className="card-image waves-effect waves-block waves-light">
-        <img className="responsive-img" src={article.image_url} alt={article.title} />
+       <div class="grid-example col s12">
+
+        <h5 class="center-align" >{article.title}</h5>
+        <div class="col s12 center-align">
+        <img className="responsive-img " 
+           src={article.image_url} alt={article.title} />
       </div>
-      <div className="card-content">
-        <span className="card-title activator grey-text text-darken-4">{article.id} : {article.title}<i className="material-icons right">more_vert</i></span>
-        <p>{article.description}</p>
+        <p  style={{
+          whiteSpace: 'pre-line'
+        }} >{article.content}</p>
+     
+       
+     
         {auth.user_id && (article.user_id === auth.user_id &&
         <div className="btn-group">
           <Link to={{ pathname: `/articles/${article.id}/edit`, state: { article: article }}} className="btn btn-info">Edit</Link> 
@@ -19,15 +23,17 @@ const ArticleShow = ({article, deleteArticle, auth}) => {
           <Link to="/articles" className="btn btn-secondary">Close</Link>
         </div>)}
       </div>
-      <div className="card-reveal">
-        <span className="card-title grey-text text-darken-4">{article.title}<i className="material-icons right">close</i></span>
-        <p>{article.content}</p>
-      </div>
-      <hr/>          
-    </div>
-   </div>
-   </div>
+       
+  
+  
+   
+   
   )
+}
+
+const imageStyle = {
+    maxWidth: '100%'
+    
 }
 
 ArticleShow.defaultProps = {

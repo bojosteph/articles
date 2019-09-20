@@ -12,6 +12,6 @@ export default combineReducers({
   errors: errorReducer,
   articles: articlesReducer,
   article: articleReducer,
+  comment: commentReducer,
   comments: commentsReducer,
-  comment: commentReducer
 })
