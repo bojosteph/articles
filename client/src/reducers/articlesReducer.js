@@ -14,16 +14,12 @@ const initialState = {
   filtered: []
   }
 
-export default function articlesReducer(state = initialState, action) {
+export default function articlesReducer(state = initialState, action) {      
   switch(action.type) { 
     case RECEIVE_ARTICLES:
       return action.payload;
     case ADD_ARTICLE:
-      if (state.user) {
-        return action.payload;    
-      } else {
-        return state;
-      }
+      return [...state, action.payload]          
     case REMOVE_ARTICLE:
       return state.filter(article => article.id !== action.payload.id);
     case REPLACE_ARTICLE:

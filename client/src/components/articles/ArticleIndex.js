@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 
-const ArticleIndex = ({article}) => {
+const ArticleIndex = ({article}) => {   
+
+  const [ count,  increaseCount ] = useState(0); 
   return (    
             <div className="col s12 m6 l3">
               <div className="card-panel hoverable">
@@ -12,6 +14,8 @@ const ArticleIndex = ({article}) => {
                   <div className="card-content">
                     <span className="card-title activator grey-text text-darken-4">{article.title}<i className="material-icons right">more_vert</i></span>
                     <p><Link to={`/articles/${article.id}`}>{article.title}</Link></p>
+                    <button onClick={() => increaseCount( count + 1 )}> &hearts;
+                    Likes:{count}</button>   
                   </div>
                   <div className="card-reveal">
                     <span className="card-title grey-text text-darken-4">{article.title}<i className="material-icons right">close</i></span>

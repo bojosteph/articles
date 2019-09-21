@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import  { connect } from 'react-redux';
 import { getArticles} from '../../actions/index';
 import ArticleIndex from '../../components/articles/ArticleIndex';
@@ -9,8 +9,16 @@ class ArticleList extends Component {
     super();
 
     this.state = {
+      count: 0,
       value: ''
     }
+  }
+
+  increaseCount = () => {
+    let newCount = this.state.count + 1
+    this.setState({
+      count: newCount
+    })
   }
 
   onSearchChange = event => {
@@ -35,8 +43,9 @@ class ArticleList extends Component {
       article.title.toLowerCase().includes(this.state.value.toLowerCase())
     ).map((article) => {
           return(
-             
-             <ArticleIndex key={article.id} article={article} />             
+          
+             <ArticleIndex key={article.id} article={article} /> 
+                     
            )     
         })}
         
